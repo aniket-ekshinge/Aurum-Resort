@@ -16,26 +16,27 @@ export default function VirtualTour({ initialRoom = 0 }) {
   const room                  = TOUR_ROOMS[current];
 
   // ── Init / update Pannellum whenever room changes ──────────────────────
+  // Destructure BEFORE the effect — this is what ESLint requires
+  const { image } = room;
+
   useEffect(() => {
-    // Destroy previous viewer if exists
     if (viewerRef.current) {
       viewerRef.current.destroy();
       viewerRef.current = null;
     }
 
-    // Only init if the room has an image AND pannellum is loaded
-    if (room.image && window.pannellum) {
+    if (image && window.pannellum) {
       viewerRef.current = window.pannellum.viewer('tour-container', {
         type: 'equirectangular',
-        panorama: room.image,
+        panorama: image,
         autoLoad: true,
-        autoRotate: -2,          // slow auto-spin
+        autoRotate: -2,
         autoRotateInactivityDelay: 3000,
-        showControls: false,     // hide default UI — we use our own
+        showControls: false,
         compass: false,
         mouseZoom: false,
         keyboardZoom: false,
-        hfov: 100,               // field of view
+        hfov: 100,
       });
     }
 
@@ -45,7 +46,7 @@ export default function VirtualTour({ initialRoom = 0 }) {
         viewerRef.current = null;
       }
     };
-  }, [current]); // re-runs every time room changes
+  }, [current, image]);  // ← both current AND image in deps
 
   // ── Auto-play slideshow ────────────────────────────────────────────────
   useEffect(() => {
