@@ -1,0 +1,107 @@
+.container { border: 1px solid rgba(201,168,76,0.15); overflow: hidden; background: var(--charcoal); }
+
+.header { padding: 1.2rem 1.8rem; border-bottom: 1px solid rgba(201,168,76,0.1); display: flex; align-items: center; justify-content: space-between; }
+
+.label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); }
+
+.controls { display: flex; gap: 8px; }
+.ctrl {
+  width: 36px; height: 36px; background: transparent;
+  border: 1px solid rgba(201,168,76,0.3); color: var(--gold);
+  cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s; font-family: 'Montserrat', sans-serif;
+}
+.ctrl:hover, .active { background: var(--gold); color: var(--onyx); }
+
+.viewport { height: 380px; position: relative; overflow: hidden; user-select: none; }
+
+.scene {
+  width: 90%; height: 85%; margin: 4% auto;
+  border: 1px solid rgba(201,168,76,0.18);
+  position: relative; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  transition: background 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.roomLabel {
+  position: absolute; top: 1rem; left: 1rem;
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); background: rgba(10,10,10,0.7);
+  padding: 4px 10px; border: 1px solid rgba(201,168,76,0.2);
+}
+
+.roomName { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--cream); pointer-events: none; }
+.roomDesc { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--smoke); margin-top: 6px; pointer-events: none; }
+
+.hotspot {
+  position: absolute; width: 22px; height: 22px;
+  transform: translate(-50%, -50%); cursor: pointer;
+}
+
+.hotspotDot {
+  width: 22px; height: 22px; border: 2px solid var(--gold); border-radius: 50%;
+  background: rgba(201,168,76,0.15);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse { 0%,100% { transform:scale(1); opacity:1; } 50% { transform:scale(1.15); opacity:0.7; } }
+
+.tooltip {
+  position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+  background: rgba(10,10,10,0.92); border: 1px solid rgba(201,168,76,0.3);
+  padding: 5px 11px; font-size: 10px; letter-spacing: 0.5px; color: var(--cream);
+  white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s; border-radius: 0;
+}
+.hotspot:hover .tooltip { opacity: 1; }
+
+.dragHint {
+  position: absolute; bottom: 1rem; right: 1rem;
+  font-size: 9px; letter-spacing: 1px; color: rgba(136,136,136,0.4); text-transform: uppercase;
+}
+
+.navBar { display: flex; border-top: 1px solid rgba(201,168,76,0.1); }
+
+.navItem {
+  flex: 1; padding: 12px; text-align: center; cursor: pointer;
+  border-right: 1px solid rgba(201,168,76,0.1);
+  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--smoke); font-weight: 600; background: transparent;
+  border-top: none; border-bottom: none; border-left: none;
+  font-family: 'Montserrat', sans-serif; transition: all 0.2s;
+}
+.navItem:last-child { border-right: none; }
+.navItem:hover { background: rgba(201,168,76,0.05); color: var(--cream); }
+.navActive { background: rgba(201,168,76,0.08); color: var(--gold); }
+
+/* Pannellum fills the scene div */
+.scene {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Hotspots float above the pannellum canvas */
+.hotspotLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;   /* lets clicks pass through to pannellum */
+  z-index: 10;
+}
+
+.hotspot {
+  pointer-events: all;    /* but hotspots themselves are still clickable */
+}
+
+/* Shown only when a room has no image yet */
+.noImageFallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1A0F05, #0D0D0D);
+  z-index: 5;
+}

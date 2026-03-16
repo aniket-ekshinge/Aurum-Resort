@@ -1,0 +1,26 @@
+.pageHeader { background:var(--deep); border-bottom:1px solid rgba(201,168,76,0.1); padding:60px 2.5rem; }
+.headerContent { max-width:1300px; margin:0 auto; }
+
+.layout { display:grid; grid-template-columns:1fr 380px; gap:4rem; align-items:start; }
+
+.tabs { display:flex; gap:0; border-bottom:1px solid rgba(201,168,76,0.14); margin-bottom:0; }
+.tab { padding:11px 18px; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--smoke); cursor:pointer; border-bottom:2px solid transparent; border-top:none; border-left:none; border-right:none; background:transparent; font-family:'Montserrat',sans-serif; font-weight:600; transition:all 0.25s; }
+.tab:hover { color:var(--cream); }
+.activeTab { color:var(--gold) !important; border-bottom-color:var(--gold) !important; }
+
+.menuList { }
+.menuItem { display:flex; align-items:flex-start; justify-content:space-between; padding:1.2rem 0; border-bottom:1px solid rgba(255,255,255,0.04); cursor:pointer; transition:padding-left 0.3s; gap:1rem; }
+.menuItem:hover { padding-left:8px; }
+
+.menuItemInfo { flex:1; }
+.menuItemName { font-family:'Playfair Display',serif; font-size:17px; font-weight:600; color:var(--cream); margin-bottom:2px; }
+.menuItemCourse { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:5px; opacity:0.7; }
+.menuItemDesc { font-size:11px; color:var(--smoke); line-height:1.55; margin-bottom:6px; }
+.menuItemTags { display:flex; gap:5px; flex-wrap:wrap; }
+.menuItemPrice { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--gold); white-space:nowrap; }
+
+.chefNote { margin-top:3rem; padding:2rem; border-left:2px solid var(--gold); background:rgba(201,168,76,0.03); }
+.chefNoteText { font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--cream); line-height:1.55; margin-bottom:0.8rem; }
+.chefSig { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
+
+@media (max-width:900px) { .layout { grid-template-columns:1fr; } }

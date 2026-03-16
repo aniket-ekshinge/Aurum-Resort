@@ -1,0 +1,13 @@
+.pageHeader { background:var(--deep); border-bottom:1px solid rgba(201,168,76,0.1); padding:60px 2.5rem; }
+.headerContent { max-width:1300px; margin:0 auto; }
+
+.filters { display:flex; align-items:center; gap:10px; margin-bottom:2.5rem; flex-wrap:wrap; }
+.filterBtn { background:transparent; border:1px solid rgba(201,168,76,0.2); color:var(--smoke); padding:8px 18px; font-size:9px; letter-spacing:2px; text-transform:uppercase; cursor:pointer; font-family:'Montserrat',sans-serif; font-weight:600; transition:all 0.25s; }
+.filterBtn:hover { border-color:var(--gold); color:var(--cream); }
+.activeFilter { background:rgba(201,168,76,0.1); border-color:var(--gold) !important; color:var(--gold) !important; }
+.count { margin-left:auto; font-size:11px; color:var(--smoke); letter-spacing:1px; }
+
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:rgba(201,168,76,0.08); }
+
+@media (max-width:900px) { .grid { grid-template-columns:1fr; background:transparent; gap:1.5rem; } }
+@media (max-width:1100px) and (min-width:901px) { .grid { grid-template-columns:repeat(2,1fr); } }

@@ -1,0 +1,17 @@
+{
+  "name": "aurum-resort",
+  "version": "1.0.0",
+  "description": "Ultra-luxury 5-star hotel & restaurant booking platform",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\" --names \"API,React\" --prefix-colors \"yellow,cyan\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "start": "cd server && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

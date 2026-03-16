@@ -1,0 +1,60 @@
+.pageHeader { background:var(--deep); border-bottom:1px solid rgba(201,168,76,0.1); padding:60px 2.5rem; }
+.headerContent { max-width:1300px; margin:0 auto; }
+
+.memberLayout { display:grid; grid-template-columns:2fr 1fr; gap:2rem; margin-bottom:3rem; }
+
+.memberCard { background:linear-gradient(135deg,#1A1500 0%,#2D2200 50%,#1A1500 100%); border:1px solid rgba(201,168,76,0.4); padding:2.5rem; position:relative; overflow:hidden; }
+.memberCard::before { content:'AURUM'; position:absolute; right:-10px; top:50%; transform:translateY(-50%) rotate(-90deg); font-family:'Playfair Display',serif; font-size:80px; font-weight:900; color:rgba(201,168,76,0.035); letter-spacing:8px; pointer-events:none; }
+
+.tierBadge { display:inline-block; background:var(--gold); color:var(--onyx); font-size:9px; letter-spacing:3px; text-transform:uppercase; padding:5px 14px; font-weight:700; margin-bottom:1.5rem; }
+.memberName { font-family:'Playfair Display',serif; font-size:28px; font-weight:700; color:var(--cream); margin-bottom:4px; }
+.memberMeta { font-size:11px; color:var(--smoke); letter-spacing:0.5px; margin-bottom:1.5rem; }
+
+.pointsRow { display:flex; align-items:baseline; gap:10px; margin-bottom:0.8rem; }
+.pointsNum { font-family:'Playfair Display',serif; font-size:52px; font-weight:900; color:var(--gold); line-height:1; }
+.pointsLabel { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--smoke); }
+
+.progressBar { width:100%; height:3px; background:rgba(201,168,76,0.1); margin-bottom:8px; }
+.progressFill { height:100%; background:linear-gradient(90deg,var(--gold-dark),var(--gold-light)); transition:width 1s ease; }
+.progressLabel { font-size:11px; color:var(--smoke); letter-spacing:0.5px; margin-bottom:1.5rem; }
+.cardActions { display:flex; gap:1rem; flex-wrap:wrap; }
+
+.statsGrid { display:grid; grid-template-columns:1fr 1fr; gap:1.5px; background:rgba(201,168,76,0.1); }
+.statCard { background:var(--charcoal); padding:1.5rem; text-align:center; }
+.statNum { font-family:'Playfair Display',serif; font-size:32px; font-weight:700; color:var(--gold); }
+.statLabel { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--smoke); margin-top:4px; }
+
+.historySection { margin-bottom:3rem; }
+.bookingItem { display:flex; align-items:center; gap:1.5rem; padding:1.2rem 0; border-bottom:1px solid rgba(255,255,255,0.04); cursor:pointer; transition:padding-left 0.3s; }
+.bookingItem:hover { padding-left:8px; }
+.bookingDate { width:60px; text-align:center; flex-shrink:0; }
+.bookingDay { font-family:'Playfair Display',serif; font-size:28px; font-weight:700; color:var(--gold); line-height:1; }
+.bookingMonth { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--smoke); }
+.bookingInfo { flex:1; }
+.bookingRoom { font-family:'Playfair Display',serif; font-size:16px; font-weight:600; color:var(--cream); margin-bottom:3px; }
+.bookingDetail { font-size:11px; color:var(--smoke); }
+.bookingRight { text-align:right; display:flex; flex-direction:column; gap:6px; align-items:flex-end; }
+.bookingPts { font-size:11px; color:var(--gold); font-weight:600; }
+
+.simulator { background:var(--charcoal); border:1px solid rgba(201,168,76,0.18); padding:2.5rem; margin-top:4rem; }
+.simSliders { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin:2rem 0; }
+.simValue { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; color:var(--gold); margin-top:8px; }
+.simResults { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(201,168,76,0.08); }
+.simResultCard { background:var(--charcoal); padding:1.5rem; text-align:center; }
+.simNum { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--gold); }
+.simLabel { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--smoke); margin-top:4px; }
+
+.perksGrid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5px; background:rgba(201,168,76,0.08); margin-top:2rem; }
+.perkCard { background:var(--charcoal); padding:2rem; transition:all 0.3s; cursor:default; }
+.perkCard:hover { background:#1F1F1F; transform:translateY(-4px); }
+.perkIcon { font-size:36px; margin-bottom:0.8rem; display:block; }
+.perkTier { font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); opacity:0.6; margin-bottom:5px; }
+.perkName { font-family:'Playfair Display',serif; font-size:15px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+.perkDesc { font-size:11px; color:var(--smoke); line-height:1.6; }
+
+@media (max-width:900px) {
+  .memberLayout { grid-template-columns:1fr; }
+  .simSliders { grid-template-columns:1fr; }
+  .perksGrid { grid-template-columns:1fr 1fr; }
+  .simResults { grid-template-columns:1fr; }
+}

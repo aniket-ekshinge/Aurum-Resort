@@ -1,0 +1,105 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%),
+    linear-gradient(180deg, #0A0A0A 0%, #0F0C05 50%, #0A0A0A 100%);
+  z-index: 0;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  background: var(--charcoal);
+  border: 1px solid rgba(201,168,76,0.22);
+  padding: 2.5rem 2rem;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--smoke);
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  padding: 10px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--smoke);
+  cursor: pointer;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: all 0.25s;
+}
+.tab:hover { color: var(--cream); }
+.activeTab { color: var(--gold) !important; border-bottom-color: var(--gold) !important; }
+
+.demoHint {
+  background: rgba(201,168,76,0.05);
+  border: 1px solid rgba(201,168,76,0.12);
+  padding: 10px 14px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.demoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.demoRow span { color: var(--smoke); }
+.demoRow code { color: var(--gold); font-size: 11px; background: rgba(201,168,76,0.08); padding: 2px 7px; }
+
+.form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+.inputError { border-bottom-color: var(--danger) !important; }
+.errorMsg { font-size: 10px; color: var(--danger); margin-top: -4px; letter-spacing: 0.3px; }
+
+.bonusNote {
+  text-align: center;
+  font-size: 11px;
+  color: var(--smoke);
+  margin-top: 1.2rem;
+  letter-spacing: 0.3px;
+}
