@@ -8,12 +8,143 @@ const users = [
 const sessions = {};
 
 const rooms = [
-  { id: 1, tier: 'Signature Collection', name: 'Overwater Bungalow', slug: 'overwater-bungalow', shortDesc: 'Perched above the turquoise lagoon with direct ocean access.', description: 'Perched above the turquoise lagoon, these iconic bungalows offer direct access to the crystal-clear waters beneath.', pricePerNight: 1850, emoji: '🌊', bgColor: '#0A1520', size: '95 sqm', bedType: 'King', view: 'Direct Ocean', maxGuests: 2, available: true, amenities: ['Glass Floor Panel','Private Deck','Outdoor Shower','Sun Loungers'], fullAmenities: ['Glass floor panel with lagoon views','Private sundeck with direct ocean access','Outdoor rain shower','King-size bed with Egyptian cotton','Plunge pool','Dual vanity marble bathroom','Butler service','24hr room service','Complimentary minibar','Nespresso machine','Bang & Olufsen sound system','Smart home controls'], rating: 4.9, reviews: 248 },
-  { id: 2, tier: 'Prestige Collection', name: 'Ocean Villa', slug: 'ocean-villa', shortDesc: 'A private sanctuary with direct beach access and infinity pool.', description: 'A private sanctuary with direct beach access, surrounded by lush tropical gardens and the endless Indian Ocean horizon.', pricePerNight: 3200, emoji: '🏖️', bgColor: '#0F1A10', size: '240 sqm', bedType: 'King + Twin', view: 'Beach & Ocean', maxGuests: 4, available: true, amenities: ['Private Beach','Infinity Pool','Garden','Outdoor Dining'], fullAmenities: ['Private beach stretch','Heated infinity pool','Outdoor dining pavilion','Personal butler','Master bedroom + 1 guest room','Sunken living room','Outdoor shower garden','Yoga deck','Wine cellar','Personal buggy & driver','Snorkelling equipment','Complimentary spa treatment'], rating: 4.95, reviews: 182 },
-  { id: 3, tier: 'Imperial Collection', name: 'Royal Penthouse', slug: 'royal-penthouse', shortDesc: 'Three-floor private residence commanding 360° views of the atoll.', description: 'The pinnacle of island luxury. A sprawling three-floor residence commanding 360° views of the entire atoll.', pricePerNight: 8900, emoji: '👑', bgColor: '#1A0F05', size: '850 sqm', bedType: '3 × King', view: '360° Atoll', maxGuests: 6, available: false, amenities: ['3 Floors','360° Views','Private Chef','Helipad'], fullAmenities: ['3-floor private residence','360° panoramic atoll views','Dedicated private chef','Helicopter pad access','3 master bedrooms','Private cinema','Full-size tennis court','Rooftop infinity pool','Rolls-Royce transfer','Personal security team','Private spa suite','Underwater bedroom option'], rating: 5.0, reviews: 64 },
-  { id: 4, tier: 'Garden Collection', name: 'Jungle Retreat', slug: 'jungle-retreat', shortDesc: 'Treehouse-inspired villa with wraparound tropical forest views.', description: "Immerse yourself in the island's verdant heart. A treehouse-inspired villa with wraparound jungle views.", pricePerNight: 1250, emoji: '🌿', bgColor: '#051205', size: '140 sqm', bedType: 'King', view: 'Tropical Forest', maxGuests: 2, available: true, amenities: ['Treehouse Style','Forest Bath','Yoga Deck','Bird Sanctuary'], fullAmenities: ['Elevated treehouse design','Private forest bathing area','Morning yoga deck','Birdwatching tower','King canopy bed','Organic minibar','Natural fibre furnishings','Outdoor bathtub','Hammock garden','Nature guide service','Sunrise meditation sessions','Herbal garden'], rating: 4.85, reviews: 139 },
-  { id: 5, tier: 'Sunset Collection', name: 'Sunset Suite', slug: 'sunset-suite', shortDesc: 'West-facing sanctuary with the most breathtaking sunset panoramas.', description: 'Strategically positioned on the western tip of the island, offering the most breathtaking sunset panoramas.', pricePerNight: 2400, emoji: '🌅', bgColor: '#1A0A00', size: '320 sqm', bedType: 'Emperor', view: 'Horizon Sunset', maxGuests: 2, available: true, amenities: ['West Facing','Champagne Service','Sky Lounge','Private Chef'], fullAmenities: ['West-facing sunset position','Complimentary champagne at sundown','Private sky lounge','Personal chef for breakfast','Master bedroom + lounge','Roof terrace pool','Telescope observatory','Stargazing programme','Sunset butler','Monogrammed amenities','Daily floral arrangement','Sunset picnic service'], rating: 4.92, reviews: 211 },
-  { id: 6, tier: 'Family Collection', name: 'Family Island Villa', slug: 'family-island-villa', shortDesc: 'Two connected beach villas designed for families seeking freedom.', description: 'Spanning two private beach villas connected by a garden walkway. Designed for families seeking absolute freedom.', pricePerNight: 4600, emoji: '🏡', bgColor: '#0A0A1A', size: '520 sqm', bedType: '4 Bedrooms', view: 'Beach & Lagoon', maxGuests: 8, available: true, amenities: ['2 Villas','Kids Zone','Family Pool','Nanny Service'], fullAmenities: ['2 interconnected beach villas','Dedicated kids activity zone','Family infinity pool','24hr professional nanny','4 bedrooms total','Home cinema room','Kids dining menu','Underwater explorer kit','Family buggy','Babysitting included','Kids spa treatments','Adventure programme'], rating: 4.88, reviews: 97 }
+  { 
+    id: 1,
+    tier: 'Signature Collection',
+    name: 'Overwater Bungalow',
+    slug: 'overwater-bungalow',
+    image: '/rooms/overwater-bungalow1.png',
+    tourImage: '/tours/overwater-bungalow.png',
+    shortDesc: 'Perched above the turquoise lagoon with direct ocean access.',
+    description: 'Perched above the turquoise lagoon, these iconic bungalows offer direct access to the crystal-clear waters beneath.',
+    pricePerNight: 1850,
+    emoji: '🌊',
+    bgColor: '#0A1520',
+    size: '95 sqm',
+    bedType: 'King',
+    view: 'Direct Ocean',
+    maxGuests: 2,
+    available: true,
+    amenities: ['Glass Floor Panel','Private Deck','Outdoor Shower','Sun Loungers'],
+    fullAmenities: ['Glass floor panel with lagoon views','Private sundeck with direct ocean access','Outdoor rain shower','King-size bed with Egyptian cotton','Plunge pool','Dual vanity marble bathroom','Butler service','24hr room service','Complimentary minibar','Nespresso machine','Bang & Olufsen sound system','Smart home controls'],
+    rating: 4.9,
+    reviews: 248
+  },
+
+  { 
+    id: 2,
+    tier: 'Prestige Collection',
+    name: 'Ocean Villa',
+    slug: 'ocean-villa',
+    image: '/rooms/ocean-villa1.png',
+    tourImage: '/tours/ocean-villa.png',
+    shortDesc: 'A private sanctuary with direct beach access and infinity pool.',
+    description: 'A private sanctuary with direct beach access, surrounded by lush tropical gardens and the endless Indian Ocean horizon.',
+    pricePerNight: 3200,
+    emoji: '🏖️',
+    bgColor: '#0F1A10',
+    size: '240 sqm',
+    bedType: 'King + Twin',
+    view: 'Beach & Ocean',
+    maxGuests: 4,
+    available: true,
+    amenities: ['Private Beach','Infinity Pool','Garden','Outdoor Dining'],
+    fullAmenities: ['Private beach stretch','Heated infinity pool','Outdoor dining pavilion','Personal butler','Master bedroom + 1 guest room','Sunken living room','Outdoor shower garden','Yoga deck','Wine cellar','Personal buggy & driver','Snorkelling equipment','Complimentary spa treatment'],
+    rating: 4.95,
+    reviews: 182
+  },
+
+  { 
+    id: 3,
+    tier: 'Imperial Collection',
+    name: 'Royal Penthouse',
+    slug: 'royal-penthouse',
+    image: '/rooms/royal-penthouse1.png',
+    tourImage: '/tours/royal-penthouse.png',
+    shortDesc: 'Three-floor private residence commanding 360° views of the atoll.',
+    description: 'The pinnacle of island luxury. A sprawling three-floor residence commanding 360° views of the entire atoll.',
+    pricePerNight: 8900,
+    emoji: '👑',
+    bgColor: '#1A0F05',
+    size: '850 sqm',
+    bedType: '3 × King',
+    view: '360° Atoll',
+    maxGuests: 6,
+    available: false,
+    amenities: ['3 Floors','360° Views','Private Chef','Helipad'],
+    fullAmenities: ['3-floor private residence','360° panoramic atoll views','Dedicated private chef','Helicopter pad access','3 master bedrooms','Private cinema','Full-size tennis court','Rooftop infinity pool','Rolls-Royce transfer','Personal security team','Private spa suite','Underwater bedroom option'],
+    rating: 5.0,
+    reviews: 64
+  },
+
+  { 
+    id: 4,
+    tier: 'Garden Collection',
+    name: 'Jungle Retreat',
+    slug: 'jungle-retreat',
+    image: '/rooms/jungle-retreat1.png',
+    tourImage: '/tours/jungle-retreat.png',
+    shortDesc: 'Treehouse-inspired villa with wraparound tropical forest views.',
+    description: "Immerse yourself in the island's verdant heart. A treehouse-inspired villa with wraparound jungle views.",
+    pricePerNight: 1250,
+    emoji: '🌿',
+    bgColor: '#051205',
+    size: '140 sqm',
+    bedType: 'King',
+    view: 'Tropical Forest',
+    maxGuests: 2,
+    available: true,
+    amenities: ['Treehouse Style','Forest Bath','Yoga Deck','Bird Sanctuary'],
+    fullAmenities: ['Elevated treehouse design','Private forest bathing area','Morning yoga deck','Birdwatching tower','King canopy bed','Organic minibar','Natural fibre furnishings','Outdoor bathtub','Hammock garden','Nature guide service','Sunrise meditation sessions','Herbal garden'],
+    rating: 4.85,
+    reviews: 139
+  },
+
+  { 
+    id: 5,
+    tier: 'Sunset Collection',
+    name: 'Sunset Suite',
+    slug: 'sunset-suite',
+    image: '/rooms/sunset-suite1.png',
+    tourImage: '/tours/sunset-suite.png',
+    shortDesc: 'West-facing sanctuary with the most breathtaking sunset panoramas.',
+    description: 'Strategically positioned on the western tip of the island, offering the most breathtaking sunset panoramas.',
+    pricePerNight: 2400,
+    emoji: '🌅',
+    bgColor: '#1A0A00',
+    size: '320 sqm',
+    bedType: 'Emperor',
+    view: 'Horizon Sunset',
+    maxGuests: 2,
+    available: true,
+    amenities: ['West Facing','Champagne Service','Sky Lounge','Private Chef'],
+    fullAmenities: ['West-facing sunset position','Complimentary champagne at sundown','Private sky lounge','Personal chef for breakfast','Master bedroom + lounge','Roof terrace pool','Telescope observatory','Stargazing programme','Sunset butler','Monogrammed amenities','Daily floral arrangement','Sunset picnic service'],
+    rating: 4.92,
+    reviews: 211
+  },
+
+  { 
+    id: 6,
+    tier: 'Family Collection',
+    name: 'Family Island Villa',
+    slug: 'family-island-villa',
+    image: '/rooms/family-island-villa1.png',
+    tourImage: '/tours/family-island-villa.png',
+    shortDesc: 'Two connected beach villas designed for families seeking freedom.',
+    description: 'Spanning two private beach villas connected by a garden walkway. Designed for families seeking absolute freedom.',
+    pricePerNight: 4600,
+    emoji: '🏡',
+    bgColor: '#0A0A1A',
+    size: '520 sqm',
+    bedType: '4 Bedrooms',
+    view: 'Beach & Lagoon',
+    maxGuests: 8,
+    available: true,
+    amenities: ['2 Villas','Kids Zone','Family Pool','Nanny Service'],
+    fullAmenities: ['2 interconnected beach villas','Dedicated kids activity zone','Family infinity pool','24hr professional nanny','4 bedrooms total','Home cinema room','Kids dining menu','Underwater explorer kit','Family buggy','Babysitting included','Kids spa treatments','Adventure programme'],
+    rating: 4.88,
+    reviews: 97
+  }
 ];
 
 const roomBookings = [
@@ -30,31 +161,31 @@ const diningReservations = [
 
 const menuItems = {
   tasting: [
-    { id: 't1', name: 'Amuse-Bouche Trilogy', description: 'Beluga caviar blini, tuna tartare with wasabi foam, truffle arancini', price: 48, tags: ['signature'], course: 'Starter' },
-    { id: 't2', name: 'Lobster Bisque', description: 'Cold-water Maldivian lobster, saffron cream, cognac reduction, micro herbs', price: 64, tags: ['signature','spiced'], course: 'Soup' },
-    { id: 't3', name: 'Wagyu Tenderloin A5', description: 'Japanese A5 wagyu, 36-hour sous vide, black truffle jus, potato fondant', price: 195, tags: ['signature'], course: 'Main' },
-    { id: 't4', name: 'Tuna Tataki', description: 'Line-caught yellowfin tuna, sesame crust, ponzu dressing, pickled daikon', price: 88, tags: ['vegetarian-friendly'], course: 'Starter' },
-    { id: 't5', name: 'Ocean Harvest Platter', description: 'Langoustine, oysters, half-shell scallops, tiger prawns, mignonette', price: 175, tags: ['signature'], course: 'Sharing' }
+    { id: 't1', name: 'Amuse-Bouche Trio', description: 'Pani puri with truffle water, beetroot tikki with caviar, saffron golgappa shot', price: 52, tags: ['signature'], course: 'Starter' },
+    { id: 't2', name: 'Shorba-e-Zafran', description: 'Royal saffron broth, hand-picked Kashmiri saffron, slow-roasted tomato, micro coriander', price: 68, tags: ['signature', 'vegetarian'], course: 'Soup' },
+    { id: 't3', name: 'Raan-e-Aurum', description: '72-hour slow-braised lamb leg, aged dum masala, black cardamom jus, saffron mash', price: 210, tags: ['signature'], course: 'Main' },
+    { id: 't4', name: 'Tandoori Lobster', description: 'Maldivian cold-water lobster, ajwain butter, pickled cucumber, smoked tomato chutney', price: 185, tags: ['signature', 'spiced'], course: 'Sharing' },
+    { id: 't5', name: 'Dal Aurum', description: 'Black lentils slow-cooked 48 hours, Amul white butter, truffle oil, gold leaf finish', price: 95, tags: ['signature', 'vegetarian'], course: 'Main' }
   ],
   alacarte: [
-    { id: 'a1', name: 'Foie Gras Torchon', description: 'Duck liver torchon, brioche toast, fig compote, candied walnuts, aged balsamic', price: 72, tags: ['signature'], course: 'Starter' },
-    { id: 'a2', name: 'Burrata Caprese', description: 'Heirloom tomatoes, buffalo burrata, basil oil, Maldon sea salt', price: 42, tags: ['vegetarian'], course: 'Starter' },
-    { id: 'a3', name: 'Grilled Seabass', description: 'Whole island seabass, citrus butter, fennel confit, saffron velouté', price: 96, tags: ['signature','spiced'], course: 'Main' },
-    { id: 'a4', name: 'Truffle Risotto', description: 'Aged Carnaroli rice, black truffle, aged Parmigiano-Reggiano, chive oil', price: 78, tags: ['vegetarian','signature'], course: 'Main' },
-    { id: 'a5', name: 'Rack of Lamb', description: 'New Zealand rack, pistachio crust, herb jus, ratatouille, potato gratin', price: 145, tags: [], course: 'Main' }
+    { id: 'a1', name: 'Burrah Lamb Chops', description: 'Himalayan lamb, raw papaya marinade, coal-fired tandoor, mint and green chilli relish', price: 145, tags: ['signature'], course: 'Starter' },
+    { id: 'a2', name: 'Paneer Malai Tikka', description: 'Hung curd marinated cottage cheese, cardamom cream, rose petal chutney, edible gold', price: 58, tags: ['vegetarian', 'signature'], course: 'Starter' },
+    { id: 'a3', name: 'Coastal Prawn Moilee', description: 'Tiger prawns in Kerala coconut milk, curry leaf oil, appam, pickled raw mango', price: 115, tags: ['signature', 'spiced'], course: 'Main' },
+    { id: 'a4', name: 'Subz Dum Biryani', description: 'Aged basmati, seasonal heirloom vegetables, sealed in dough, rose water, crispy onions', price: 88, tags: ['vegetarian'], course: 'Main' },
+    { id: 'a5', name: 'Murgh Makhani Royale', description: 'Free-range chicken, 24-hour tomato reduction, Amul butter, fenugreek, house-baked naan', price: 125, tags: [], course: 'Main' }
   ],
   drinks: [
-    { id: 'd1', name: 'Krug Grande Cuvée', description: 'Multi-vintage Champagne of extraordinary complexity. By glass or magnum', price: 95, tags: ['signature'], course: 'Sparkling' },
-    { id: 'd2', name: 'Pétrus 2015', description: 'The legendary Pomerol. Blackcurrant, cedar, dark chocolate.', price: 3200, tags: ['signature'], course: 'Red Wine' },
-    { id: 'd3', name: 'Aurum Old Fashioned', description: '18-year Macallan, house-smoked ice sphere, gold leaf, orange bitters', price: 65, tags: ['signature'], course: 'Cocktail' },
-    { id: 'd4', name: 'Maldivian Sunset', description: 'Island rum, coconut water, passionfruit, lime, turmeric, edible flowers', price: 38, tags: ['signature','vegetarian'], course: 'Cocktail' },
-    { id: 'd5', name: 'Virgin Sunset', description: 'Fresh tropical juices, coconut water, ginger, passion fruit, sparkling water', price: 22, tags: ['vegetarian','non-alcoholic'], course: 'Mocktail' }
+    { id: 'd1', name: 'Aurum Chai Sour', description: 'Darjeeling first flush tea-washed whisky, cardamom syrup, lemon, egg white foam', price: 72, tags: ['signature'], course: 'Cocktail' },
+    { id: 'd2', name: 'Royal Lassi', description: 'Thick Amul curd, Alphonso mango, saffron, cardamom, rose water, silver leaf', price: 35, tags: ['vegetarian', 'non-alcoholic', 'signature'], course: 'Mocktail' },
+    { id: 'd3', name: 'Paan Martini', description: 'Grey Goose vodka, betel leaf extract, gulkand, white chocolate, edible silver', price: 78, tags: ['signature'], course: 'Cocktail' },
+    { id: 'd4', name: 'Thandai Colada', description: 'Almonds, rose petals, fennel, poppy seed, coconut cream, crushed ice, silver dust', price: 38, tags: ['vegetarian', 'non-alcoholic'], course: 'Mocktail' },
+    { id: 'd5', name: 'Single Malt Amrut', description: 'Amrut Fusion single malt, 8-year aged, notes of tropical fruit, oak, dark spice', price: 95, tags: ['signature'], course: 'Whisky' }
   ],
   dessert: [
-    { id: 'ds1', name: 'Valrhona Chocolate Sphere', description: 'Dark chocolate sphere, warm caramel, raspberry coulis, gold leaf, vanilla ice cream', price: 48, tags: ['signature','vegetarian'], course: 'Dessert' },
-    { id: 'ds2', name: 'Mango Soufflé', description: 'Alphonso mango soufflé, Maldivian vanilla crème anglaise, mango sorbet', price: 38, tags: ['vegetarian'], course: 'Dessert' },
-    { id: 'ds3', name: 'Cheese Trolley', description: '24 fine cheeses, seasonal accompaniments, artisanal crackers, house chutneys', price: 65, tags: ['signature'], course: 'Cheese' },
-    { id: 'ds4', name: 'Île Flottante', description: 'Floating island, praline, spun caramel, vanilla custard, candied almonds', price: 34, tags: ['vegetarian'], course: 'Dessert' }
+    { id: 'ds1', name: 'Gulab Jamun Soufflé', description: 'Warm rose and cardamom soufflé, rabri ice cream, pistachio crumble, gold leaf', price: 55, tags: ['signature', 'vegetarian'], course: 'Dessert' },
+    { id: 'ds2', name: 'Mango Shrikhand Dome', description: 'Alphonso mango sphere, hung curd mousse, saffron gel, almond praline, rose dust', price: 48, tags: ['vegetarian', 'signature'], course: 'Dessert' },
+    { id: 'ds3', name: 'Mithai Trolley', description: '18 handcrafted Indian sweets — kaju katli, mohanthal, besan ladoo, motichoor, peda', price: 75, tags: ['vegetarian', 'signature'], course: 'Sharing' },
+    { id: 'ds4', name: 'Kulfi Brûlée', description: 'Malai kulfi custard, jaggery caramel crust, rose petal jam, crushed pistachios', price: 42, tags: ['vegetarian'], course: 'Dessert' }
   ]
 };
 

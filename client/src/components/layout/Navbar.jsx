@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useTheme } from '../../context/ThemeContext';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
@@ -12,6 +13,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const navigate = useNavigate();
   const { isAuthenticated, isAdmin, user, logout } = useAuth();
+  const { isDark, toggle } = useTheme();
 
   return (
     <nav className={styles.nav}>
@@ -37,6 +39,13 @@ export default function Navbar() {
       </ul>
 
       <div className={styles.authArea}>
+        <button
+          className={styles.themeToggle}
+          onClick={toggle}
+          title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
+          {isDark ? '☀️' : '🌙'}
+        </button>
         {isAuthenticated ? (
           <>
             <div className={styles.userInfo} onClick={() => navigate('/loyalty')} title="View Rewards">

@@ -1,19 +1,35 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './RoomCard.module.css';
 
-export default function RoomCard({ room }) {
+export default function RoomCard({ room, onTourClick }) {
   const navigate = useNavigate();
 
   return (
     <div className={styles.card} onClick={() => navigate(`/rooms/${room.slug}`)}>
-      <div className={styles.visual} style={{ background: room.bgColor }}>
-        <div className={styles.emoji}>{room.emoji}</div>
-        <div className={styles.overlay}>
-          <button className={`btn btn-sm ${styles.tourBtn}`} onClick={e => { e.stopPropagation(); navigate(`/rooms/${room.slug}?tour=1`); }}>
-            ▶ Virtual Tour
-          </button>
-        </div>
-      </div>
+<div className={styles.visual}>
+  {room.image ? (
+    <img
+      src={room.image}
+      alt={room.name}
+      className={styles.roomImg}
+      onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+    />
+  ) : null}
+  <div
+    className={styles.fallback}
+    style={{ background: room.bgColor, display: room.image ? 'none' : 'flex' }}
+  >
+    <span className={styles.emoji}>{room.emoji}</span>
+  </div>
+  <div className={styles.overlay}>
+    <button
+      className={`btn btn-sm ${styles.tourBtn}`}
+      onClick={e => { e.stopPropagation(); onTourClick?.(room); }}
+    >
+      ▶ Virtual Tour
+    </button>
+  </div>
+</div>
 
       <div className={styles.info}>
         <div className={styles.tier}>{room.tier}</div>

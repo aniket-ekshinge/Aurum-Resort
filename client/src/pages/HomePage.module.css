@@ -1,7 +1,6 @@
 .hero { position:relative; height:100vh; min-height:600px; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden; text-align:center; }
 
-.heroBg { position:absolute; inset:0; background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%), linear-gradient(180deg,#0A0A0A 0%,#0F0C05 40%,#0A0A0A 100%); }
-.heroGrid { position:absolute; inset:0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px); background-size:80px 80px; mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%); }
+.heroBg { position:absolute; inset:0; background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%), linear-gradient(180deg, var(--onyx) 0%, var(--deep) 40%, var(--onyx) 100%); }.heroGrid { position:absolute; inset:0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px); background-size:80px 80px; mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%); }
 
 .heroContent { position:relative; z-index:2; padding:0 2rem; }
 .heroOrnament { width:1px; height:72px; background:linear-gradient(to bottom,transparent,var(--gold),transparent); margin:0 auto 2rem; animation:pulse 3s ease-in-out infinite; }

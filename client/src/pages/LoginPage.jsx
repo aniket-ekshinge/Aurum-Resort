@@ -53,13 +53,6 @@ export default function LoginPage() {
             <button className={`${styles.tab} ${tab === 'register' ? styles.activeTab : ''}`} onClick={() => { setTab('register'); setErrors({}); }}>Create Account</button>
           </div>
 
-          {/* Demo credentials hint */}
-          {tab === 'login' && (
-            <div className={styles.demoHint}>
-              <div className={styles.demoRow}><span>Guest demo:</span><code>alex@aurum.com / alex123</code></div>
-              <div className={styles.demoRow}><span>Admin demo:</span><code>admin@aurum.com / admin2024</code></div>
-            </div>
-          )}
 
           <form className={styles.form} onSubmit={handleSubmit}>
             {tab === 'register' && (

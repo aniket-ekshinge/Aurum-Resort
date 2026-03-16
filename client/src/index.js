@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 import App from './App';
 import './index.css';
 
@@ -12,12 +13,13 @@ root.render(
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>
-        <AuthProvider>
-          <App />
-          <Toaster
-            position="bottom-right"
-            toastOptions={{
-              style: {
+        <ThemeProvider>
+          <AuthProvider>
+            <App />
+            <Toaster
+              position="bottom-right"
+              toastOptions={{
+                style: {
                 background: '#1A1A1A',
                 color: '#F5F0E8',
                 border: '1px solid rgba(201,168,76,0.35)',
@@ -29,7 +31,8 @@ root.render(
               success: { iconTheme: { primary: '#C9A84C', secondary: '#0A0A0A' } },
             }}
           />
-        </AuthProvider>
+          </AuthProvider>
+        </ThemeProvider>
       </BrowserRouter>
     </HelmetProvider>
   </React.StrictMode>

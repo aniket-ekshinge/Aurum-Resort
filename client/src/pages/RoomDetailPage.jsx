@@ -22,7 +22,11 @@ export default function RoomDetailPage() {
       <Helmet><title>{room.name} — Aurum Resort</title></Helmet>
 
       <div className={styles.hero} style={{background:room.bgColor}}>
-        <div className={styles.heroEmoji}>{room.emoji}</div>
+        {room.image ? (
+          <img src={room.image} alt={room.name} className={styles.heroImg} />
+        ) : (
+          <div className={styles.heroEmoji}>{room.emoji}</div>
+        )}
         <div className={styles.heroBadge}>{room.tier}</div>
       </div>
 
