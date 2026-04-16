@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const TOKEN_KEY = 'aurum_token';
+console.log("API URL:", process.env.REACT_APP_API_URL);
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL || '/api',
